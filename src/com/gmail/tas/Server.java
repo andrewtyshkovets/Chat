@@ -28,8 +28,7 @@ public class Server {
 						PrintWriter out = new PrintWriter(socket.getOutputStream())) {
 
 					String line = null;
-					while (!in.ready())
-						;
+					while (!in.ready());
 
 					while (in.ready()) {
 						line = in.readLine();
