@@ -18,6 +18,8 @@ public class Server {
 			System.out.println("Waiting for a client");
 			while (true) {
 				Socket socket = ss.accept();
+				
+				
 				System.out.println("Client is connected");
 
 				try (BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
