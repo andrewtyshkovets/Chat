@@ -1,11 +1,7 @@
 package com.gmail.tas;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.*;
 
@@ -27,9 +23,11 @@ public class Server {
 				try (BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 						PrintWriter out = new PrintWriter(socket.getOutputStream())) {
 
-					String line = null;
-					while (!in.ready());
 
+					while (!in.ready()) {
+					}
+					System.out.println("stream has been read");
+					String line;
 					while (in.ready()) {
 						line = in.readLine();
 						System.out.println(line);
@@ -41,6 +39,7 @@ public class Server {
 							"<p><img src=https://images-na.ssl-images-amazon.com/images/I/8166xCVDGnL._SY355_.jpg><h1>Hello!</h1></p>");
 					out.flush();
 				}
+					
 			}
 		} catch (Exception x) {
 			x.printStackTrace();
